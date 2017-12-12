@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
-import {single} from '../../data';
+import {occurrences} from '../../data';
 
 @Component({
   selector: 'app-visualize',
@@ -9,7 +9,7 @@ import {single} from '../../data';
 })
 export class VisualizeComponent implements OnInit {
 
-  single: any[];
+  occurrences: any[];
 
   view: any[] = [1000, 400];
 
@@ -28,7 +28,7 @@ export class VisualizeComponent implements OnInit {
   };
 
   constructor() {
-    Object.assign(this, {single});   
+    Object.assign(this, {occurrences});   
   }
   
   lastTwo = [0,1];
@@ -42,9 +42,9 @@ export class VisualizeComponent implements OnInit {
   addData(num) {
     // get the most significant digit and increment the data
     let leading = parseInt(num.toString()[0]);
-    var clone = this.single.slice(0);
+    var clone = this.occurrences.slice(0);
     clone[leading-1].value++;
-    this.single = clone;
+    this.occurrences = clone;
   }
 
 

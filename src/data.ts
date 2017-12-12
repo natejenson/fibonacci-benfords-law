@@ -1,4 +1,4 @@
-export var single = [
+export var occurrences = [
     {
       "name": "1",
       "value": 0
