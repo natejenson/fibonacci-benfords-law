@@ -7,7 +7,6 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { VisualizeComponent } from './visualize/visualize.component';
 import { AppRoutingModule } from './/app-routing.module';
 
-
 @NgModule({
   declarations: [
     AppComponent,
