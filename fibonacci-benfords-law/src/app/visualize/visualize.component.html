@@ -1,7 +1,14 @@
-<table>
+<table style="width: 100%">
   <tr>
     <td>
       <app-feed></app-feed>
+    </td>
+    <td>
+      <div appFrappe 
+        [title]="'Distribution'" 
+        [data]="data"
+        [type]="'bar'">
+    </div>
     </td>
   </tr>
 </table>

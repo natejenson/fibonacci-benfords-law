@@ -7,13 +7,15 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { VisualizeComponent } from './visualize/visualize.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { FeedComponent } from './feed/feed.component';
+import { FrappeDirective } from './frappe.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeComponent,
     VisualizeComponent,
-    FeedComponent
+    FeedComponent,
+    FrappeDirective
   ],
   imports: [
     BrowserModule,
