@@ -1,5 +1,6 @@
 import { Directive, ElementRef, Input, Output, EventEmitter } from '@angular/core';
 import Chart from "frappe-charts/dist/frappe-charts.min.esm"
+import { HostListener } from '@angular/core/src/metadata/directives';
 
 
 @Directive({
@@ -22,12 +23,13 @@ export class FrappeDirective {
   }
 
   ngOnChanges() {
+    console.log('ng on changes');
     let chart = new Chart({
       parent: this.el.nativeElement,
       title: this.title,
       region_fill: 1,
       data: this.data,
-      type: this.type, // or 'line', 'scatter', 'pie', 'percentage'
+      type: this.type,
       height: this.height
     });
     this.frappe.emit(chart);
