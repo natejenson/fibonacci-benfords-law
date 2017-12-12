@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import Chart from "frappe-charts/dist/frappe-charts.min.esm"
 import {NgxChartsModule} from '@swimlane/ngx-charts';
 import {single} from '../../data';
 
@@ -12,7 +11,7 @@ export class VisualizeComponent implements OnInit {
 
   single: any[];
 
-  view: any[] = [700, 400];
+  view: any[] = [1000, 400];
 
   // options
   showXAxis = true;
