@@ -7,6 +7,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { VisualizeComponent } from './visualize/visualize.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { FrappeDirective } from './frappe.directive';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { FrappeDirective } from './frappe.directive';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxChartsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

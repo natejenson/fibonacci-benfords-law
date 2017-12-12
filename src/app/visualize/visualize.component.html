@@ -1,11 +1,25 @@
 <table style="width: 100%">
   <tr>
     <td>
-      <div appFrappe 
+      <!-- <div appFrappe 
         [title]="'Distribution'" 
         [data]="data"
         [type]="'bar'">
-    </div>
+    </div> -->
+    <ngx-charts-bar-vertical
+      [view]="view"
+      [scheme]="colorScheme"
+      [results]="single"
+      [gradient]="gradient"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [legend]="showLegend"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel"
+      (select)="onSelect($event)">
+    </ngx-charts-bar-vertical>
     </td>
   </tr>
 </table>

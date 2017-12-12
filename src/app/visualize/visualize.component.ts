@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import Chart from "frappe-charts/dist/frappe-charts.min.esm"
+import {NgxChartsModule} from '@swimlane/ngx-charts';
+import {single} from '../../data';
 
 @Component({
   selector: 'app-visualize',
@@ -8,18 +10,28 @@ import Chart from "frappe-charts/dist/frappe-charts.min.esm"
 })
 export class VisualizeComponent implements OnInit {
 
-  data = {
-    labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9'],
-    datasets: [
-        {
-            title: 'Fibonacci Leading Digit',
-            //values: [9,8,7,6,5,4,3,2,1],
-            values: [0,0,0,0,0,0,0,0,0],
-        },
-    ],
-  }
-  constructor() { }
+  single: any[];
 
+  view: any[] = [700, 400];
+
+  // options
+  showXAxis = true;
+  showYAxis = true;
+  gradient = false;
+  showLegend = false;
+  showXAxisLabel = true;
+  xAxisLabel = 'Most significant digit';
+  showYAxisLabel = true;
+  yAxisLabel = 'Occurrences';
+
+  colorScheme = {
+    domain: ['#5AA454']
+  };
+
+  constructor() {
+    Object.assign(this, {single});   
+  }
+  
   lastTwo = [0,1];
 
   ngOnInit() {
@@ -31,15 +43,16 @@ export class VisualizeComponent implements OnInit {
   addData(num) {
     // get the most significant digit and increment the data
     let leading = parseInt(num.toString()[0]);
-    console.log('leading', leading);
-    this.data.datasets[0].values[leading-1]++;
+    var clone = this.single.slice(0);
+    clone[leading-1].value++;
+    this.single = clone;
   }
+
 
   nextFibonacci() {
     const res = this.lastTwo[0] + this.lastTwo[1];
     this.lastTwo.shift();
     this.lastTwo.push(res);
-    console.log('fib', res);
     return res;
   }
 }
