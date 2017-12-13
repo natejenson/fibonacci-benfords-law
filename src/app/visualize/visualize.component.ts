@@ -10,6 +10,7 @@ import {occurrences} from '../../data';
 export class VisualizeComponent implements OnInit {
 
   occurrences: any[];
+  newest: number;
 
   view: any[] = [1000, 400];
 
@@ -36,10 +37,11 @@ export class VisualizeComponent implements OnInit {
   ngOnInit() {
     window.setInterval(() => {
         this.addData(this.nextFibonacci());
-    }, 1000);
+    }, 700);
   }
 
   addData(num) {
+    this.newest = num;
     // get the most significant digit and increment the data
     let leading = parseInt(num.toString()[0]);
     var clone = this.occurrences.slice(0);
