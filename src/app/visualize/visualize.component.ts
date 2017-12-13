@@ -25,7 +25,7 @@ export class VisualizeComponent implements OnInit {
   yAxisLabel = 'Occurrences';
 
   colorScheme = {
-    domain: ['#5AA454']
+    domain: ['#8e44ad']
   };
 
   constructor() {
